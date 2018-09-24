@@ -1,0 +1,60 @@
+* PSO Algorithm description
+  Particle swarm optimization (PSO) is a population-based stochastic optimization algorithm motivated 
+  by intelligent collective behavior of some animals such as flocks of birds 
+  or schools of fish. Since presented in 1995, it has experienced a multitude of enhancements. 
+  The algorithm consists of several steps:
+  1. Initialize particles
+  2. Calculate fitness values for each particle
+  3. Check if current fitness values are better than best values
+  4. a) if yes, assign current values as new best values
+     b) if no, keep previous best values
+  5. Calculate velocities for each particle
+  6. Use each particle's velocity value to update 
+     its data values
+  7. Check if maximum iterations reached.	
+     a) If not reached, continue
+     b) If reached, stop
+  
+* Experiment description
+  In this work we had to compare the PSO algorithm with different settings to Random Search Optimisation
+  algorithm. 
+  To complete the task, the Python programming language was selected.	
+  The reason to select this language was that it can reduce development time with it's clear syntaxis, 
+  has a lot in the standart library and is easy to read and write. 	
+  So, the PSO and Random Search (RS) algorhitms were implemented (see the code listing file).
+  For PSO algorithm we had several settings, where ω is inertia weight, c1 - cognitive acceleration coefficient
+  c2 - social acceleration coefficient 
+  1. ω = 0.729844, c1 = c2 = 1.496180
+  2. ω = 0.4, c1 = c2 = 1.2 
+  3. ω = 1.0, c1 = c2 = 2.0
+  4. ω = −1.0, c1 = c2 = 2.0
+  
+* Results
+  The both optimisation algorithms were run for 5 times and the followign results were obtained:
+  PSO:
+  1. settings: w=0.729844, c1=1.49618, c2=1.49618
+     results: 204.249973716, 247.956689274, 238.931139925, 262.809759836, 203.112861637
+  2. settings: w=0.4, c1=1.2, c2=1.2
+     results: 300.578746396, 290.006094322, 299.724884122, 334.737936521, 320.236057843
+  3. settings: w=1.0, c1=2.0, c2=2.0
+     results: 441.069318102, 407.518336675, 397.27511055, 439.342751522, 433.330174511
+  4. settings:  w=-1.0, c1=2.0, c2=2.0
+     results: 379.239531687, 429.345170773, 392.859709006, 379.113154154, 402.378007891
+  RSO:
+  1. 374.654472811, 375.854650149, 405.966801963, 378.629684402, 318.449054784
+
+  The same results as a table:
+  Configuration | mean     | median | st deviation
+  PSO1          | 231.4121 |238.9311|26.7147
+  PSO2      	| 309.0567 |300.5787|18.07199
+  PSO3		| 423.7071 |433.3302|19.99531
+  PSO4		| 396.5871 |392.8597|20.77737
+  RS		| 370.7109 |375.8547|31.93351
+
+* Conclusion
+  The first two setting sets were the best among both PSO and RS algorithms. 
+  With the increase of w and c values RS results become better. The standart deviation was alwats lower in
+  PSO than in RS, returning more precise results.
+
+  The conclusion is that the correct settings for PSO algorithm is important, incorrect settings
+  may return worse result than in Random Search.
